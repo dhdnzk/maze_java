@@ -2,9 +2,10 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
+ * Last modification 2015. 10. 13..
  */
 public class Nevigator {
-    
+
     static int whereToGo ( int[][] map, Node curPosition ) {
         if ( canGoRight( map, curPosition ) ) {
             return 1;
@@ -46,7 +47,7 @@ public class Nevigator {
 
     }
 
-    boolean gameEndOrNot() {
+    static boolean gameEndOrNot() {
 
         return true;
     }
