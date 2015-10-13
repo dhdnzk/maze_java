@@ -28,31 +28,59 @@ public class Player {
         }
 
         void move ( ) {
-                go( Nevigator.whereToGo( this.map, this.curPosition ) );
-                this.gameIng = Nevigator.gameEndOrNot();
+                this.gameIng = go( Nevigator.whereToGo( this.map, this.curPosition ) );
         }
 
-        void go ( int i ) {
-                switch ( i ) {
+        boolean go ( int i ) {
+                Node newNode;
+                switch (i) {
                         case 1:
-                            break;
+                                newNode = new Node (this.curPosition.getyPos(),
+                                                    this.curPosition.getxPos() + 1,
+                                                    this.curPosition );
+                                this.curPosition.setState( 2 );
+                                this.curPosition = newNode;
+                                this.numOfMove++;
+
+                                break;
 
                         case 2:
-                            break;
+                                newNode = new Node (this.curPosition.getyPos() + 1,
+                                                    this.curPosition.getxPos(),
+                                                    this.curPosition );
+                                this.curPosition.setState( 2 );
+                                this.curPosition = newNode;
+                                this.numOfMove++;
+                                break;
 
                         case 3:
-                            break;
+                                newNode = new Node (this.curPosition.getyPos(),
+                                                    this.curPosition.getxPos() - 1,
+                                                    this.curPosition );
+                                this.curPosition.setState( 2 );
+                                this.curPosition = newNode;
+                                this.numOfMove++;
+                                break;
 
                         case 4:
-                            break;
+                                newNode = new Node (this.curPosition.getyPos() - 1,
+                                                    this.curPosition.getxPos(),
+                                                    this.curPosition );
+                                this.curPosition.setState( 2 );
+                                this.curPosition = newNode;
+                                this.numOfMove++;
+                                break;
 
                         case 5:
-                            break;
+                                this.curPosition.setState( -1 );
+                                this.curPosition.setNext( this.curPosition.getNext() );
+                                this.numOfMove--;
+                                break;
 
                         case 6:
-                            this.gameIng = false;
-                            break;
-                }
-        }
+                                return false;
 
+                }
+                return true;
+        }
 }
