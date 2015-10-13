@@ -27,52 +27,31 @@ public class Player {
         }
 
         void move ( ) {
-                go( this.whereToGo() );
-                this.gameEndOrNot();
+                go( Nevigator.whereToGo( this.map, this.curPosition ) );
+                this.gameIng = Nevigator.game();
         }
 
-        int whereToGo ( ) {
-                if ( this.canGoRight() ) {
-                        return 1;
+
+        void go ( int i ) {
+                switch ( i ) {
+                        case 1:
+                            break;
+
+                        case 2:
+                            break;
+
+                        case 3:
+                            break;
+
+                        case 4:
+                            break;
+
+                        case 5:
+                            break;
+
                 }
-                else if ( this.canGoDown() ) {
-                        return 2;
-                }
-                else if ( this.canGoLeft() ) {
-                        return 3;
-                }
-                else if ( this.canGoUP() ) {
-                        return 4;
-                }
-                else {
-                        return 5;
-                }
-
         }
 
-        boolean canGoRight () {
-
-        }
-
-        boolean canGoDown () {
-
-        }
-
-        boolean canGoLeft () {
-
-        }
-
-        boolean canGoUP () {
-
-        }
-
-        void go (int i) {
-
-        }
-
-        void gameEndOrNot() {
-
-        }
 }
 
 class Node {
