@@ -5,4 +5,12 @@ package maze;
  * Last modification 2015. 10. 13..
  */
 public class ScreenOut {
+    public static void showState ( Player p ) {
+
+    }
+
+    public static void showResult ( Player p ) {
+
+    }
 }
+
