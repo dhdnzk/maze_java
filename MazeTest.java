@@ -10,7 +10,7 @@ public class MazeTest {
         ScreenOut.showState( p1 );
 
         while(p1.gameIng) {
-            p1.move();
+            p1.move( );
             ScreenOut.showState( p1 );
         }
     }
