@@ -2,6 +2,7 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
+ * Last modification 2015. 10. 14..
  */
 class Node {
     private int xPos;
