@@ -78,7 +78,7 @@ public class Nevigator {
     // 벽에 닿았을때 선언된 배열 범위를 넘어가는지 경계검사 해야함
     static boolean canGoBack ( int[][] map, Node curPosition ) {
         try {
-            if ( curPosition.getxPos() <= map[0].length -1 ) {
+            if ( curPosition.getxPos() < map[0].length -1 ) {
                 if ( map[curPosition.getyPos()][curPosition.getxPos() + 1] == 2 )
                     return true;
             }
@@ -88,7 +88,7 @@ public class Nevigator {
                     return true;
             }
 
-            if ( 0 <= curPosition.getxPos() ) {
+            if ( 0 < curPosition.getxPos() ) {
                 if ( map[curPosition.getyPos() + 1][curPosition.getxPos()] == 2 )
                     return true;
             }
