@@ -12,5 +12,6 @@ public class MazeTest {
         while(p1.gameIng) {
             p1.move( );
         }
+        ScreenOut.showResult( p1 );
     }
 }
