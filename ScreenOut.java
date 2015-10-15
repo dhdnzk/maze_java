@@ -18,27 +18,36 @@ public class ScreenOut {
         for(int y = 0; y < p.getMap().length; y++) {
             System.out.print("│");
             for(int x = 0; x < p.getMap()[0].length; x++) {
-                if( p.getMap()[y][x] == 1 ) {    // 벽
-                    System.out.print("EE");
-                }
                 if ( y == p.getCurPosition().getyPos()
-                  && x == p.getCurPosition().getxPos() ) {
+                        && x == p.getCurPosition().getxPos() ) {
                     System.out.print("◀▶");     // 플레이어 위치
                 }
-                else if ( p.getMap()[y][x] == 0 ) { // 아직 안간길
-                    System.out.print("  ");
+                else {
+                    switch (p.getMap()[y][x]) {
+                        case 0:
+                            System.out.print("  ");
+                            break;
+
+                        case 1:
+                            System.out.print("EE");
+                            break;
+                        case 2:
+                            System.out.print("◁▷");
+                            break;
+
+                        case 3:
+                            System.out.print("EE");
+                            break;
+
+                        case 4:
+                            System.out.print("◀▷");
+                            break;
+                        case 5:
+                            System.out.print("◁▶");
+
+
+                    }
                 }
-                else if ( p.getMap()[y][x] == 2 ) { // 지나온 길
-                    System.out.print("◁▷");
-                }
-                else if (p.getMap()[y][x] == 3 ) { // 갔다가 돌아온길
-                    System.out.print("  ");
-                }
-                else if ( p.getMap()[y][x] == 4 ) { // 출발지점
-                    System.out.print("◀▷");
-                }
-                else if ( p.getMap()[y][x] == 5 ) // 도착지점
-                    System.out.print("◁▶");
             }
             System.out.println("│");
         }
@@ -54,7 +63,7 @@ public class ScreenOut {
         }
         System.out.println("─┘");
         try {
-            Thread.sleep ( 500 );
+            Thread.sleep ( 250 );
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
