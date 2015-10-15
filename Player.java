@@ -74,7 +74,7 @@ public class Player {
                 this.gameIng = true;
         }
 
-        void move ( ) {
+        void moving() {
                 this.gameIng = go( Nevigator.whereToGo( this.map, this.curPosition ) );
                 this.gameIng = Nevigator.gameOverOrNot( this.map, this.curPosition );
                 ScreenOut.showState( this );
@@ -86,7 +86,7 @@ public class Player {
                         this.map[curPosition.getyPos()][curPosition.getxPos()] = 2;
                 }
                 Node newNode;
-                switch (i) {
+                switch ( i ) {
                         case 1:
                                 newNode = new Node (this.curPosition.getxPos() + 1,
                                                     this.curPosition.getyPos(),
