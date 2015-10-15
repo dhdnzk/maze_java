@@ -2,7 +2,7 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
- * Last modification 2105. 10. 14..
+ * Last modification 2105. 10. 15..
  */
 public class Player {
         private int numOfMove;
@@ -76,6 +76,8 @@ public class Player {
 
         void move ( ) {
                 this.gameIng = go( Nevigator.whereToGo( this.map, this.curPosition ) );
+                this.gameIng = Nevigator.gameOverOrNot( this.map, this.curPosition );
+                ScreenOut.showState( this );
         }
 
         boolean go ( int i ) {

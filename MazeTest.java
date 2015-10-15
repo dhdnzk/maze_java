@@ -2,7 +2,7 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
- * Last modification 2015. 10. 14..
+ * Last modification 2015. 10. 15..
  */
 public class MazeTest {
     public static void main ( String[] args ) {
@@ -11,7 +11,6 @@ public class MazeTest {
 
         while(p1.gameIng) {
             p1.move( );
-            ScreenOut.showState( p1 );
         }
     }
 }

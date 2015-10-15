@@ -2,7 +2,7 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
- * Last modification 2015. 10. 14..
+ * Last modification 2015. 10. 15..
  */
 public class ScreenOut {
 
@@ -54,7 +54,7 @@ public class ScreenOut {
         }
         System.out.println("─┘");
         try {
-            Thread.sleep ( 50 );
+            Thread.sleep ( 500 );
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

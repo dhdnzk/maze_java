@@ -2,7 +2,7 @@ package maze;
 
 /**
  * Created by DH on 2015. 10. 13..
- * Last modification 2015. 10. 14..
+ * Last modification 2015. 10. 15..
  *
  */
 public class Nevigator {
@@ -26,8 +26,11 @@ public class Nevigator {
     static boolean canGoRight( int[][] map, Node curPosition ) {
         try {
             if ( curPosition.getxPos() < map[0].length - 1 ) {
-                if ( map[curPosition.getyPos()][curPosition.getxPos() + 1] == 0 )
+                if ( map[curPosition.getyPos()][curPosition.getxPos() + 1] == 0 ||
+                     map[curPosition.getyPos()][curPosition.getxPos() + 1] == 4 ||
+                     map[curPosition.getyPos()][curPosition.getxPos() + 1] == 5 ) {
                     return true;
+                }
             }
         } catch ( ArrayIndexOutOfBoundsException e ) {
             e.getMessage();
@@ -39,8 +42,11 @@ public class Nevigator {
     static boolean canGoDown(int[][] map, Node curPosition) {
         try {
             if ( curPosition.getyPos() < map.length - 1 ) {
-                if ( map[curPosition.getyPos() + 1][curPosition.getxPos()] == 0 )
+                if ( map[curPosition.getyPos() + 1][curPosition.getxPos()] == 0 ||
+                     map[curPosition.getyPos() + 1][curPosition.getxPos()] == 4 ||
+                     map[curPosition.getyPos() + 1][curPosition.getxPos()] == 5 ) {
                     return true;
+                }
             }
         } catch ( ArrayIndexOutOfBoundsException e ) {
             e.getMessage();
@@ -52,8 +58,11 @@ public class Nevigator {
     static boolean canGoLeft( int[][] map, Node curPosition ) {
         try {
             if ( 0 < curPosition.getxPos()) {
-                if ( map[curPosition.getyPos()][curPosition.getxPos() - 1] == 0 )
+                if ( map[curPosition.getyPos()][curPosition.getxPos() - 1] == 0 ||
+                     map[curPosition.getyPos()][curPosition.getxPos() - 1] == 4  ||
+                     map[curPosition.getyPos()][curPosition.getxPos() - 1] == 5 ) {
                     return true;
+                }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             e.getMessage();
@@ -65,8 +74,11 @@ public class Nevigator {
     static boolean canGoUP(int[][] map, Node curPosition) {
         try {
             if ( 0 < curPosition.getyPos() ) {
-                if ( map[curPosition.getyPos() - 1][curPosition.getxPos()] == 0 )
+                if ( map[curPosition.getyPos() - 1][curPosition.getxPos()] == 0 ||
+                     map[curPosition.getyPos() - 1][curPosition.getxPos()] == 4 ||
+                     map[curPosition.getyPos() - 1][curPosition.getxPos()] == 5 ) {
                     return true;
+                }
             }
         } catch ( ArrayIndexOutOfBoundsException e ) {
             return false;
@@ -74,8 +86,6 @@ public class Nevigator {
         return false;
     }
 
-
-    // 벽에 닿았을때 선언된 배열 범위를 넘어가는지 경계검사 해야함
     static boolean canGoBack ( int[][] map, Node curPosition ) {
         try {
             if ( curPosition.getxPos() < map[0].length -1 ) {
@@ -103,4 +113,17 @@ public class Nevigator {
             return false;
         }
     }
+
+    static boolean gameOverOrNot ( int[][] map, Node curPosition ) {
+        if ( map[curPosition.getyPos()][curPosition.getxPos()] == 5 ) {
+            return false;
+        }
+        else if ( map[curPosition.getyPos()][curPosition.getxPos()] == 4 ) {
+            return canGoBack( map, curPosition );
+        }
+        else {
+            return true;
+        }
+    }
 }
+
