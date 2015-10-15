@@ -27,25 +27,20 @@ public class ScreenOut {
                         case 0:
                             System.out.print("  ");
                             break;
-
                         case 1:
                             System.out.print("EE");
                             break;
                         case 2:
                             System.out.print("◁▷");
                             break;
-
                         case 3:
                             System.out.print("EE");
                             break;
-
                         case 4:
                             System.out.print("◀▷");
                             break;
                         case 5:
                             System.out.print("◁▶");
-
-
                     }
                 }
             }
@@ -63,14 +58,18 @@ public class ScreenOut {
         }
         System.out.println("─┘");
         try {
-            Thread.sleep ( 250 );
+            Thread.sleep ( 20 );
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     public static void showResult ( Player p ) {
-
+        if (p.getMap()[p.getCurPosition().getyPos()][p.getCurPosition().getxPos()] == 4) {
+            System.out.println("갈 수 있는 길이 없습니다!");
+        } else if (p.getMap()[p.getCurPosition().getyPos()][p.getCurPosition().getxPos()] == 5) {
+            System.out.println("골인!");
+        }
     }
 }
 
