@@ -124,6 +124,10 @@ public class Nevigator {
         else {
             return true;
         }
-    }
+  }
+
+//    static boolean gameOverOrNot ( int[][] map, Node curPosition ) {
+//        return true;
+//    }
 }
 

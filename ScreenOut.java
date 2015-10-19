@@ -25,22 +25,22 @@ public class ScreenOut {
                 else {
                     switch (p.getMap()[y][x]) {
                         case 0:
-                            System.out.print("  ");
+                            System.out.print("  ");     // 빈칸
                             break;
                         case 1:
-                            System.out.print("EE");
+                            System.out.print("EE");     // 벽
                             break;
                         case 2:
-                            System.out.print("◁▷");
+                            System.out.print("◁▷");     // 지나온 길
                             break;
                         case 3:
-                            System.out.print("EE");
+                            System.out.print("EE");     // 갔다가 아니어서 막아둔 길
                             break;
                         case 4:
-                            System.out.print("◀▷");
+                            System.out.print("◀▷");     // 출발지점
                             break;
                         case 5:
-                            System.out.print("◁▶");
+                            System.out.print("◁▶");     // 도착지점
                     }
                 }
             }
