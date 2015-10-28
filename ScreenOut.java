@@ -20,7 +20,7 @@ public class ScreenOut {
             for(int x = 0; x < p.getMap()[0].length; x++) {
                 if ( y == p.getCurPosition().getyPos()
                         && x == p.getCurPosition().getxPos() ) {
-                    System.out.print("◀▶");     // 플레이어 위치
+                    System.out.print("ME");     // 플레이어 위치
                 }
                 else {
                     switch (p.getMap()[y][x]) {
@@ -31,16 +31,16 @@ public class ScreenOut {
                             System.out.print("EE");     // 벽
                             break;
                         case 2:
-                            System.out.print("◁▷");     // 지나온 길
+                            System.out.print(" .");     // 지나온 길
                             break;
                         case 3:
-                            System.out.print("EE");     // 갔다가 아니어서 막아둔 길
+                            System.out.print("XX");     // 갔다가 아니어서 막아둔 길
                             break;
                         case 4:
-                            System.out.print("◀▷");     // 출발지점
+                            System.out.print("ST");     // 출발지점
                             break;
                         case 5:
-                            System.out.print("◁▶");     // 도착지점
+                            System.out.print("GL");     // 도착지점
                     }
                 }
             }
@@ -58,7 +58,7 @@ public class ScreenOut {
         }
         System.out.println("─┘");
         try {
-            Thread.sleep ( 30 );
+            Thread.sleep ( 250 );
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class ScreenOut {
             for(int x = 0; x < p.getMap()[0].length; x++) {
                 if ( y == p.getCurPosition().getyPos()
                         && x == p.getCurPosition().getxPos() ) {
-                    System.out.print("◀▶");     // 플레이어 위치
+                    System.out.print("ME");     // 플레이어 위치
                 }
                 else {
                     switch (p.getMap()[y][x]) {
@@ -89,16 +89,16 @@ public class ScreenOut {
                             System.out.print("EE");
                             break;
                         case 2:
-                            System.out.print("◁▷");
+                            System.out.print(". ");
                             break;
                         case 3:
                             System.out.print("  ");
                             break;
                         case 4:
-                            System.out.print("◀▷");
+                            System.out.print("ST");
                             break;
                         case 5:
-                            System.out.print("◁▶");
+                            System.out.print("GL");
                     }
                 }
             }
